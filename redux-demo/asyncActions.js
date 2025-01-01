@@ -1,6 +1,6 @@
 const redux = require("redux");
 const applyMiddleware = redux.applyMiddleware;
-const thunkMiddleware = require("redux-thunk").thunk
+const thunkMiddleware = require("redux-thunk").thunk;
 const axios = require("axios");
 
 // Initial state
@@ -48,7 +48,7 @@ const reducer = (state = initialState, actions) => {
 const fetchUsers = () => {
   return function (dispatch) {
     dispatch(fetchUsersRequested());
-    axios
+    return axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((response) => {
         const userID = response.data.map((user) => user.id);
