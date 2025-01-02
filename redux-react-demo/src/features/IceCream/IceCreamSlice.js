@@ -16,11 +16,11 @@ const iceCreamSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase("cakeOrdered", (state) => {
+    builder.addCase(cakeOrdered, (state) => {
       state.numberofIceCreams -= 1;
     });
   },
 });
 
-export default iceCreamSlice.reducer
-export const {restocked,ordered}=iceCreamSlice.actions
+export default iceCreamSlice.reducer;
+export const { restocked, ordered } = iceCreamSlice.actions;
